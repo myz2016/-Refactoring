@@ -29,7 +29,7 @@ public class Customer {
         String result = "Rental Record for " + getName() + "\n";
         for (Rental each : rentals) {
             double thisAmount = 0d;
-            thisAmount = amountFor(each);
+            thisAmount = each.getCharge();
             // add frequent renter points
             frequentRenterPoints++;
             // add bound for a two day new release rental
@@ -46,27 +46,4 @@ public class Customer {
         return result;
     }
 
-    private double amountFor(Rental each) {
-        double thisAmount = 0;
-        switch (each.getMovie().getPriceCode()) {
-            case Movie.REGULAR:
-                thisAmount += 2;
-                if (each.getDayRented() > 2) {
-                    thisAmount += (each.getDayRented() - 2) * 1.5;
-                }
-                break;
-            case Movie.CHILDREN:
-                thisAmount += 1.5;
-                if (each.getDayRented() > 3) {
-                    thisAmount += (each.getDayRented() - 3) * 1.5;
-                }
-            case Movie.NEW_RELEASE:
-                thisAmount += 2;
-                if(each.getDayRented() > 2) {
-                    thisAmount += (each.getDayRented() - 2) * 1.5;
-                }
-                break;
-        }
-        return thisAmount;
-    }
 }
