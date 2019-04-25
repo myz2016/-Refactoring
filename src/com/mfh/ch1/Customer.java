@@ -59,8 +59,8 @@ public class Customer {
             totalAmount += thisAmount;
         }
         // add footer lines
-        result += "Amount owned is " + String.valueOf(totalAmount) + "\n";
-        result += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
+        result += "Amount owned is " + totalAmount + "\n";
+        result += "You earned " + frequentRenterPoints + " frequent renter points";
         return result;
     }
 }
