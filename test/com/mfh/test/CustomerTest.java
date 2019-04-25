@@ -30,10 +30,10 @@ public class CustomerTest {
         System.out.println(statement);
         /**
          * Rental Record for 光头强
-         * 	熊出没之变形记	8.0
+         * 	熊出没之变形记	3.0
          * 	吸血鬼日记	2.0
-         * 	飞驰人生	    3.5
-         * Amount owned is 13.5
+         * 	飞驰人生	3.5
+         * Amount owned is 8.5
          * You earned 4 frequent renter points
          */
     }
