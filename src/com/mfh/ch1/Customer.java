@@ -1,5 +1,7 @@
 package com.mfh.ch1;
 
+import com.sun.org.apache.regexp.internal.RE;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +25,16 @@ public class Customer {
         return result;
     }
 
+    public String htmlStatement() {
+        String result = "<H1>Rental Record for <EM>" + getName() + "</EM></H1><P>\n";
+        for (Rental rental : rentals) {
+            result += rental.getMovie().getTitle() + ": " + rental.getCharge() + "<BR>\n";
+        }
+        // add footer lines
+        result += "<P>You owe <EM>" + getTotalCharge() + "</EM><P>\n";
+        result += "On this rental you earned <EM>" + getTotalFrequentRenterPoints() + "</EM> frequent renter points<P>";
+        return result;
+    }
     private double getTotalCharge() {
         double result = 0;
         for (Rental rental : rentals) {
