@@ -11,18 +11,6 @@ public class Customer {
     private String name;
     private List<Rental> rentals = new ArrayList<>();
 
-    public void addRental(Rental rental) {
-        this.rentals.add(rental);
-    }
-
-    public Customer(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
     public String statement() {
         String result = "Rental Record for " + getName() + "\n";
         for (Rental each : rentals) {
@@ -51,4 +39,15 @@ public class Customer {
         return result;
     }
 
+    public void addRental(Rental rental) {
+        this.rentals.add(rental);
+    }
+
+    public Customer(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
 }
