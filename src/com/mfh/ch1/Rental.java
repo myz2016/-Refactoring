@@ -13,11 +13,11 @@ public class Rental {
         this.dayRented = dayRented;
     }
 
-    public Movie getMovie() {
+    Movie getMovie() {
         return movie;
     }
 
-    public int getDayRented() {
+    int getDayRented() {
         return dayRented;
     }
 
